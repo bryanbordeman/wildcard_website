@@ -1,25 +1,33 @@
-import logo from './logo.svg';
 import './App.css';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+import WildcardTabs from './components/WildcardTabs';
+import Container from '@mui/material/Container';
+import Logo from './components/Logo';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const theme = createTheme({
+    palette: {
+        primary: {
+            main: '#4169E1',
+        },
+        secondary: {
+            main: '#F20088',
+        },
+        purple: {
+            main: '#6107D2',
+        }
+    },
+    
+});
 
-export default App;
+export default function App() {
+    return (
+        <div style={{marginTop: 20}}>
+            <ThemeProvider theme={theme}>
+                <Logo/>
+                <Container maxWidth="md">
+                    <WildcardTabs/>
+                </Container>
+            </ThemeProvider>
+        </div>
+    );
+};

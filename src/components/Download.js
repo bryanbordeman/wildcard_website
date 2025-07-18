@@ -44,10 +44,13 @@ const Download = () => {
         <img src={screen1} alt='screen1' style={styles.screenStyles} onDragStart={handleDragStart} role="presentation" />,
         <img src={screen2} alt='screen2' style={styles.screenStyles} onDragStart={handleDragStart} role="presentation" />,
         <img src={screen3} alt='screen3' style={styles.screenStyles} onDragStart={handleDragStart} role="presentation" />,
-        <img src={screen4} alt='screen4' style={styles.screenStyles} onDragStart={handleDragStart} role="presentation" />,
         <img src={screen5} alt='screen5' style={styles.screenStyles} onDragStart={handleDragStart} role="presentation" />,
+        <img src={screen4} alt='screen4' style={styles.screenStyles} onDragStart={handleDragStart} role="presentation" />,
         <img src={screen6} alt='screen6' style={styles.screenStyles} onDragStart={handleDragStart} role="presentation" />,
     ];
+
+    const bodyContent = encodeURIComponent("Why Become a Tester?\n👥 Be the First: Get exclusive access to the app before it hits the app store.\n💪 Challenge Yourself: Push your limits with unpredictable workouts.\n📣 Shape the App: Your feedback shapes the future of this app.\n \n Name: {your name}\n Email: {your email} ");
+
 
     return (
         <Box>
@@ -61,20 +64,23 @@ const Download = () => {
             <Stack direction='row' alignItems='center' justifyContent='center' spacing={3}>
                 <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                     <Box sx={styles.buttonContainerStyle}>
-                        <BadgeButton
-                            imageSrc={GoogleBadge}
-                            altText="Google Badge"
-                            buttonStyle={styles.buttonStyle}
-                        />
+                        <a href='https://apps.apple.com/us/app/wildcard-emom/id6474487430' target="_blank" rel="noopener noreferrer">
+                            <BadgeButton
+                                imageSrc={AppBadge}
+                                altText="App Store Badge"
+                                buttonStyle={styles.buttonStyle}
+                            />
+                        </a>
                     </Box>
                 </div>
                 <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                     <Box sx={styles.buttonContainerStyle}>
-                        <BadgeButton
-                            imageSrc={AppBadge}
-                            altText="App Store Badge"
+                    <a href={`mailto:support@wildcardemom.com?subject=Become A Tester for This App&body=${bodyContent}`} target="_blank" rel="noopener noreferrer">                    <BadgeButton
+                            imageSrc={GoogleBadge}
+                            altText="Google Badge"
                             buttonStyle={styles.buttonStyle}
                         />
+                    </a>
                     </Box>
                 </div>
             </Stack>
@@ -86,8 +92,8 @@ const Download = () => {
                 </Typography>
                 <Typography variant="body2" gutterBottom style={styles.text}>
                 EMOM stands for "Every Minute On the Minute." In EMOM workouts,
-                you are tasked with completing a specified exercise within a 60 second
-                timeframe of less. This application introduces an exciting wildcard
+                you are tasked with completing a specified exercise within a 60-second
+                timeframe or less. This application introduces an exciting wildcard
                 element, randomly selecting exercises and rep counts from a user-generated
                 list. Users have the flexibility to define both the minimum and maximum
                 range of repetitions for each exercise. However, be prepared for the wildcard
